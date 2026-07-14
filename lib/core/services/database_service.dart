@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 import 'package:crypto/crypto.dart';
+import 'package:otp/otp.dart' as otp_lib;
 import 'package:pwbox/core/services/crypto_service.dart';
 import 'package:pwbox/core/models/exceptions.dart' as exceptions;
 
@@ -520,6 +521,43 @@ class DatabaseService {
       print('Error during backup: $e');
       rethrow;
     }
+  }
+
+  /// 验证双因素认证码
+  /// 从config中读取2fa_secret，使用TOTP算法验证用户输入的验证码
+  /// 允许当前时间前后30秒的时间窗口
+  Future<bool> verify2fa(String code) async {
+    try {
+      final secret = await getConfig('2fa_secret');
+      if (secret == null || secret.isEmpty) {
+        return false;
+      }
+      final now = DateTime.now().millisecondsSinceEpoch;
+      // 检查当前时间、前30秒、后30秒的TOTP码
+      // 与 TwoFactorAuthScreen 中的验证逻辑保持一致
+      for (final offset in const [-30000, 0, 30000]) {
+        final expected = otp_lib.OTP.generateTOTPCodeString(
+          secret,
+          now + offset,
+          algorithm: otp_lib.Algorithm.SHA1,
+          isGoogle: true,
+        );
+        if (expected == code) {
+          return true;
+        }
+      }
+      return false;
+    } catch (e) {
+      print('2FA verification error: $e');
+      return false;
+    }
+  }
+
+  /// 禁用双因素认证
+  /// 从config中移除2fa_secret配置项
+  Future<void> disable2fa() async {
+    await deleteConfig('2fa_secret');
+    _is2faEnabled = false;
   }
 }
 
