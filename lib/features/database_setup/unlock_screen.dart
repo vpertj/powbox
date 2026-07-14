@@ -150,11 +150,11 @@ class _UnlockScreenState extends State<UnlockScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // 应用图标
-                  Image.asset(
-                    'assets/app_icon.png',
-                    width: 150,
-                    height: 150,
+                  // 应用图标（使用内置图标替代缺失的资源文件）
+                  const Icon(
+                    Icons.lock_outline_rounded,
+                    size: 120,
+                    color: Colors.blue,
                   ),
                   const SizedBox(height: 24),
                   // 屏幕标题
