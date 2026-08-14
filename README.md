@@ -1,98 +1,98 @@
-# PwBox - 安全密码管理器
+# PwBox - Secure Password Manager
 
-PwBox 是一个安全、开源的跨平台密码管理器，帮助您安全地存储和管理所有密码。
+PwBox is a secure, open-source, cross-platform password manager that helps you safely store and manage all of your passwords.
 
-## 功能特性
+## Features
 
-- 🔒 **军事级加密** - 使用 Argon2 和 AES-256-GCM 加密保护您的数据
-- 🌐 **跨平台支持** - 支持 Windows、macOS、Linux
-- 📱 **直观界面** - 现代化的用户界面，易于使用
-- 🏠 **分组管理** - 按类别组织您的密码条目
-- 🔍 **强大搜索** - 快速查找您的密码条目
-- 🗃️ **附件支持** - 为密码条目添加文件附件
-- 🔄 **自动备份** - 自动备份您的数据库以防数据丢失
-- 🗑️ **回收站** - 误删的条目可以恢复
-- 🔐 **双因素认证** - 额外的安全层保护
-- 🌓 **深色/浅色主题** - 根据您的喜好选择界面主题
-- 🌍 **多语言支持** - 支持中文和英文界面
+- 🔒 **Military-grade encryption** - Protects your data with Argon2 and AES-256-GCM encryption
+- 🌐 **Cross-platform support** - Available on Windows, macOS, and Linux
+- 📱 **Intuitive interface** - A modern, easy-to-use user interface
+- 🏠 **Group management** - Organize your password entries by category
+- 🔍 **Powerful search** - Quickly find your password entries
+- 🗃️ **Attachment support** - Attach files to password entries
+- 🔄 **Automatic backup** - Automatically backs up your database to prevent data loss
+- 🗑️ **Trash bin** - Recover accidentally deleted entries
+- 🔐 **Two-factor authentication** - An extra layer of security
+- 🌓 **Dark/light themes** - Pick the interface theme that suits your preference
+- 🌍 **Multilingual support** - Interface available in both Chinese and English
 
-## 开始使用
+## Getting Started
 
-### 系统要求
+### System Requirements
 
-- Windows 10 或更高版本
-- macOS 10.15 或更高版本
-- Linux (Ubuntu 20.04 或类似发行版)
+- Windows 10 or later
+- macOS 10.15 or later
+- Linux (Ubuntu 20.04 or similar distributions)
 
-### 安装
+### Installation
 
-1. 从 [发布页面](https://github.com/your-username/pwbox/releases) 下载适合您系统的安装包
-2. 运行安装程序并按照提示完成安装
-3. 启动 PwBox 并创建您的第一个密码数据库
+1. Download the installer for your system from the [releases page](https://github.com/your-username/pwbox/releases)
+2. Run the installer and follow the prompts to complete the installation
+3. Launch PwBox and create your first password database
 
-### 开发
+### Development
 
-如果您想从源代码构建 PwBox：
+If you would like to build PwBox from source:
 
-#### 前提条件
+#### Prerequisites
 
-- Flutter SDK 3.0 或更高版本
-- Dart SDK 2.17 或更高版本
+- Flutter SDK 3.0 or later
+- Dart SDK 2.17 or later
 
-#### 构建步骤
+#### Build Steps
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/your-username/pwbox.git
 cd pwbox
 
-# 获取依赖
+# Fetch dependencies
 flutter pub get
 
-# 运行应用
+# Run the app
 flutter run
 
-# 构建发布版本
+# Build a release version
 flutter build windows  # Windows
 flutter build macos    # macOS
 flutter build linux    # Linux
 ```
 
-## 使用说明
+## Usage
 
-1. **创建数据库** - 首次启动时，选择创建新数据库并设置主密码
-2. **添加条目** - 点击 "+" 按钮添加新的密码条目
-3. **组织分组** - 创建分组来分类管理您的密码
-4. **搜索条目** - 使用顶部搜索框快速查找密码
-5. **生成密码** - 使用内置密码生成器创建强密码
-6. **启用备份** - 在设置中启用自动备份保护您的数据
+1. **Create a database** - On first launch, choose to create a new database and set a master password
+2. **Add entries** - Click the "+" button to add a new password entry
+3. **Organize groups** - Create groups to categorize and manage your passwords
+4. **Search entries** - Use the search box at the top to quickly find passwords
+5. **Generate passwords** - Use the built-in password generator to create strong passwords
+6. **Enable backup** - Turn on automatic backup in settings to protect your data
 
-## 安全性
+## Security
 
-- 所有数据在本地使用 Argon2 和 AES-256-GCM 加密
-- 主密码永远不会存储在设备上
-- 数据库文件经过加密，即使物理访问也无法读取
-- 双因素认证提供额外的安全保护层
+- All data is encrypted locally with Argon2 and AES-256-GCM
+- The master password is never stored on your device
+- Database files are encrypted, so they cannot be read even with physical access
+- Two-factor authentication provides an additional layer of security
 
-## 贡献
+## Contributing
 
-欢迎贡献代码！请遵循以下步骤：
+Contributions are welcome! Please follow these steps:
 
-1. Fork 仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## 联系方式
+## Contact
 
-项目链接: [https://github.com/your-username/pwbox](https://github.com/your-username/pwbox)
+Project link: [https://github.com/your-username/pwbox](https://github.com/your-username/pwbox)
 
-## 致谢
+## Acknowledgements
 
 - [Flutter](https://flutter.dev/)
 - [Argon2](https://github.com/P-H-C/phc-winner-argon2)
